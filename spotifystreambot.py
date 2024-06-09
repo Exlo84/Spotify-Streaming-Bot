@@ -76,6 +76,7 @@ def main():
     chrome_options.add_argument("--user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.82 Safari/537.36")
     chrome_options.add_argument("--mute-audio")
     chrome_options.add_argument('--disable-dev-shm-usage')
+    chrome_options.add_argument("--clear-cache")
     chrome_options.add_experimental_option('prefs', {
         'profile.default_content_setting_values.notifications': 2
     })
@@ -155,17 +156,20 @@ def main():
         drivers.append(driver)
         keyboard.add_hotkey('ctrl+x', on_ctrl_x)
 
-        time.sleep(5)
+    print(Colors.blue, "Stream operations are completed. You can stop all transactions by pressing Ctrl+C or Ctrl+X.")
 
-    print(Colors.blue, "Stream operations are completed. You can stop all transactions by pressing Ctrl+X.")
-
-    while True:
-        pass
+    try:
+        while True:
+            pass
+    except KeyboardInterrupt:
+        print("\nScript interrupted by user. Exiting...")
+        for driver in drivers:
+            driver.quit()
 
 def on_ctrl_x():
     os.system("taskkill /F /IM chrome.exe")
     print("Chrome processes terminated.")
-
+    
 if __name__ == "__main__":
     main()
 
