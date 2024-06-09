@@ -55,10 +55,9 @@ def main():
                         /_______  /__/\_ \____/\____/ 
                                 \/      \/            
    
-                             Github  github.com/Exlo84    """)))
-    print("")
-    print(Colors.red, Center.XCenter("ANNOUNCEMENT"))
-    print(Colors.yellow, Center.XCenter(f"{announcement}"))
+                            Github: github.com/Exlo84
+
+""")))
     print("")
 
     chrome_path = 'C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe'
@@ -83,18 +82,18 @@ def main():
     delay = random.uniform(2, 6)
     delay2 = random.uniform(5, 14)
 
-    with open('accounts.txt', 'r') as file:
+    with open('accounts_personal.txt', 'r') as file:
         accounts = file.readlines()
 
-    proxies = []
+    #proxies = []
 
-    use_proxy = input(Colorate.Vertical(Colors.green_to_blue, "Do you want to use proxies? (y/n):"))
+    #use_proxy = input(Colorate.Vertical(Colors.green_to_blue, "Do you want to use proxies? (y/n):"))
 
-    if use_proxy.lower() == 'y':
-        print(Colors.red, Center.XCenter("The proxy system will be added after 50 stars. I continue to process without a proxy"))
-        with open('proxy.txt', 'r') as file:
-            proxies = file.readlines()
-        time.sleep(3)
+    #if use_proxy.lower() == 'y':
+    #    print(Colors.red, Center.XCenter("The proxy system will be added after 50 stars. I continue to process without a proxy"))
+    #    with open('proxy.txt', 'r') as file:
+    #        proxies = file.readlines()
+    #    time.sleep(3)
     
     spotify_song = input(Colorate.Vertical(Colors.green_to_blue, "Enter the Spotify song URL (e.g https://open.spotify.com/track/5EyVefW0MvFWeIFhH1y11Z?si=4dfb3b346dd34f62):"))
 
