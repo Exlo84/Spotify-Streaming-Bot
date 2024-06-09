@@ -58,6 +58,7 @@ def main():
                             Github: github.com/Exlo84
 
 """)))
+
     print("")
 
     chrome_path = 'C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe'
@@ -152,13 +153,18 @@ def main():
             print(Colors.red, "An error occurred in the bot system:", str(e))
 
         drivers.append(driver)
+        keyboard.add_hotkey('ctrl+x', on_ctrl_x)
 
         time.sleep(5)
 
-    print(Colors.blue, "Stream operations are completed. You can stop all transactions by closing the program.")
+    print(Colors.blue, "Stream operations are completed. You can stop all transactions by pressing Ctrl+X.")
 
     while True:
         pass
+
+def on_ctrl_x():
+    os.system("taskkill /F /IM chrome.exe")
+    print("Chrome processes terminated.")
 
 if __name__ == "__main__":
     main()
